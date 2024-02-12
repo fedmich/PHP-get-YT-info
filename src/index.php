@@ -32,10 +32,16 @@ if (empty($vid_id)) {
         // Use regex to extract video_id and title
         preg_match($regex_pattern, $page_content, $matches);
 
-        // Set response with vid_id and title as JSON object
+        // Save title into $title variable
+        $title = !empty($matches[1]) ? strip_tags($matches[1]) : '';
+
+        // Apply regex pattern to clean the title
+        $title = preg_replace('/\s*-\s*YouTube$/', '', $title);
+
+        // Set response with vid_id and cleaned title as JSON object
         $response['result'] = array(
             'vid_id' => $vid_id,
-            'title' => !empty($matches[1]) ? strip_tags($matches[1]) : '', // Strip HTML tags from the title if matches[1] is not empty
+            'title' => $title,
         );
     }
 
