@@ -8,3 +8,7 @@ Usage:
 http://localhost/watchlist/get/?id=<VIDEO_ID>
 
 returns a JSON with vid_id and title
+
+
+Want to see how I coded it from beginning?
+Here it is: https://chat.openai.com/share/25b2a20f-374d-436c-b3d2-5450fe726a22
